@@ -186,7 +186,7 @@ En PowerShell:
 Primero verifica que PostgreSQL responde:
 
 ```bash
-psql -U postgres -d socialdb
+psql -U postgres -d zaun
 ```
 
 Dentro de PostgreSQL:
@@ -386,14 +386,14 @@ echo $env:PASSWORD
 
 ---
 
-### Error: `database "socialdb" does not exist`
+### Error: `database "zaun" does not exist`
 
 La base de datos no existe.
 
 Créala:
 
 ```sql
-CREATE DATABASE socialdb;
+CREATE DATABASE zaun;
 ```
 
 ---
@@ -405,7 +405,7 @@ La conexión funciona, pero no se ejecutó el script SQL en esa base de datos.
 Ejecuta el script nuevamente:
 
 ```bash
-psql -U postgres -d socialdb -f script.sql
+psql -U postgres -d zaun -f script.sql
 ```
 
 ---
