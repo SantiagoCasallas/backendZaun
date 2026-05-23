@@ -1,42 +1,43 @@
 package com.social.backend.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "AMIGO")
 public class Amigo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @EmbeddedId
+    private AmigoId id = new AmigoId();
 
-    @Column(name = "consecuser", nullable = false, length = 5)
-    private String consecUser;
-
-    @Column(name = "consecuser2", nullable = false, length = 5)
-    private String consecUser2;
-
-    public Long getId() {
+    public AmigoId getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(AmigoId id) {
         this.id = id;
     }
 
     public String getConsecUser() {
-        return consecUser;
+        return id != null ? id.getConsecUser() : null;
     }
 
     public void setConsecUser(String consecUser) {
-        this.consecUser = consecUser;
+        if (this.id == null) {
+            this.id = new AmigoId();
+        }
+        this.id.setConsecUser(consecUser);
     }
 
     public String getConsecUser2() {
-        return consecUser2;
+        return id != null ? id.getConsecUser2() : null;
     }
 
     public void setConsecUser2(String consecUser2) {
-        this.consecUser2 = consecUser2;
+        if (this.id == null) {
+            this.id = new AmigoId();
+        }
+        this.id.setConsecUser2(consecUser2);
     }
 }

@@ -13,7 +13,7 @@ public class Propiedad {
     @Column(name = "PRO_IDPROPIEDAD")
     private String proIdPropiedad;
 
-    @Column(name = "DESCPROPIEDAD")
+    @Column(name = "ESCPROPIEDAD")
     private String descPropiedad;
 
     @Column(name = "VALORDEFECTO")

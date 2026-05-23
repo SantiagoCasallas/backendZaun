@@ -36,16 +36,13 @@ public class Usuario {
     @Column(name = "celular", length = 16, nullable = false)
     private String celular;
 
-    @Lob
-    @Column(name = "imageuser")
+    @Column(name = "imageuser", columnDefinition = "bytea")
     private byte[] imageUser;
 
-    @Lob
-    @Column(name = "temauser")
+    @Column(name = "temauser", columnDefinition = "bytea")
     private byte[] temaUser;
 
-    @Lob
-    @Column(name = "huellauser")
+    @Column(name = "huellauser", columnDefinition = "bytea")
     private byte[] huellaUser;
 
     // Getters y setters

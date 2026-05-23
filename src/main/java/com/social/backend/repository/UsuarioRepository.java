@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface UsuarioRepository extends JpaRepository<Usuario, String> {
 
     // Último ID (Oracle: FETCH FIRST 1 ROWS ONLY)
-    @Query(value = "SELECT * FROM usuario ORDER BY consecuser DESC FETCH FIRST 1 ROWS ONLY", nativeQuery = true)
+    @Query(value = "SELECT * FROM usuario ORDER BY CAST(consecuser AS INTEGER) DESC LIMIT 1", nativeQuery = true)
     Optional<Usuario> buscarUltimoUsuario();
 
     // Verificar si ya hay un email

@@ -25,8 +25,7 @@ public class Grupo {
     @Column(name = "fechareggrupo", nullable = false)
     private Date fechaRegGrupo;
 
-    @Lob
-    @Column(name = "imaggrupo", nullable = false)
+    @Column(name = "imaggrupo", columnDefinition = "bytea", nullable = false)
     private byte[] imagGrupo;
 
     // Getters y Setters
