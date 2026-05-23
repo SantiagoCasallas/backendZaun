@@ -49,7 +49,7 @@ cd backendZaun
 Crea una base de datos local en PostgreSQL:
 
 ```sql
-CREATE DATABASE socialdb;
+CREATE DATABASE zaun;
 ```
 
 Luego ejecuta el script SQL del proyecto sobre esa base de datos.
@@ -57,18 +57,18 @@ Luego ejecuta el script SQL del proyecto sobre esa base de datos.
 Desde consola:
 
 ```bash
-psql -U postgres -d socialdb -f script.sql
+psql -U postgres -d zaun -f script.sql
 ```
 
 En Windows PowerShell, si el script está en una ruta específica:
 
 ```powershell
-psql -U postgres -d socialdb -f "C:\ruta\script.sql"
+psql -U postgres -d zaun -f "C:\ruta\script.sql"
 ```
 
 También puedes ejecutarlo desde **pgAdmin**:
 
-1. Crear la base de datos `socialdb`.
+1. Crear la base de datos `zaun`.
 2. Abrir la base de datos.
 3. Entrar a **Query Tool**.
 4. Pegar el script SQL.
@@ -87,7 +87,7 @@ El proyecto usa variables de entorno para conectarse a PostgreSQL:
 ### Git Bash
 
 ```bash
-export URL="jdbc:postgresql://localhost:5432/socialdb"
+export URL="jdbc:postgresql://localhost:5432/zaun"
 export USER_NAME="postgres"
 export PASSWORD="tu_password"
 ```
@@ -95,7 +95,7 @@ export PASSWORD="tu_password"
 ### PowerShell
 
 ```powershell
-$env:URL="jdbc:postgresql://localhost:5432/socialdb"
+$env:URL="jdbc:postgresql://localhost:5432/zaun"
 $env:USER_NAME="postgres"
 $env:PASSWORD="tu_password"
 ```
@@ -115,7 +115,7 @@ src/main/resources/application.properties
 Configuración esperada:
 
 ```properties
-spring.datasource.url=${URL:jdbc:postgresql://localhost:5432/socialdb}
+spring.datasource.url=${URL:jdbc:postgresql://localhost:5432/zaun}
 spring.datasource.username=${USER_NAME:postgres}
 spring.datasource.password=${PASSWORD:postgres}
 spring.datasource.driver-class-name=org.postgresql.Driver
