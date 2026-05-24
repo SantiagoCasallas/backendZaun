@@ -375,6 +375,8 @@ La contraseña de PostgreSQL es incorrecta.
 Revisa la variable:
 
 ```bash
+echo $URL
+echo $USER_NAME
 echo $PASSWORD
 ```
 
